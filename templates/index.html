@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pneumonia Detection</title>
+  <style>
+    body {
+      background-image: url('/static/img/background_img.jpg'); /* NEW */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 60px;
+      margin: 0;
+    }
+
+    .container {
+      background: #979595a8;
+      padding: 50px 180px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.724);
+      display: inline-block;
+      max-width: 500px;
+    }
+
+    h1 {
+      color: #241f1f;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      display: block;
+      color: #c5cbcd;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #2e2e2e;
+      border: 1px solid #444;
+      color: #ccc;
+      border-radius: 6px;
+    }
+
+    input[type="file"]::file-selector-button {
+      background-color: #bcc2c2;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    input[type="file"]::file-selector-button:hover {
+      background-color: #a9b8b65d;
+    }
+
+    button {
+      background-color: #bcc2c2;
+      color: rgb(34, 33, 33);
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #bdc2c214;
+    }
+  </style>
+</head>
+<body >
+  <div class="container">
+    <h1>Pneumonia Detection</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <label for="file"><b>Select Chest X-ray Image</b></label>
+      <input type="file" name="file" id="file" required><br>
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
